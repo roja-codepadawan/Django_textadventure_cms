@@ -1,0 +1,21 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+venv/
+ENV/
+env/
+*.env
+.venv/
+
+# Django SQLite DB
+db.sqlite3
+*.sqlite3
+
+# Migrations (optional – nur wenn du sie nicht versionieren willst)
+# cms/migrations/
+# !cms/migrations/__init__.py
+
+# VS
