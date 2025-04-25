@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TextAdventure CMS</title>
+</head>
+<body>
+    <h1>Stories</h1>
+    <ul>
+        {% for story in stories %}
+            <li><strong>{{ story.title }}</strong>: {{ story.description }}</li>
+        {% empty %}
+            <li>No stories yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
