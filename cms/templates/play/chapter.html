@@ -1,0 +1,24 @@
+{% extends "play/base.html" %}
+
+{% block title %}{{ chapter.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ chapter.title }}</h1>
+<p>{{ chapter.content }}</p>
+
+{% if chapter.choices.exists %}
+    <h3>Was tust du?</h3>
+    <ul>
+        {% for choice in chapter.choices.all %}
+            <li>
+                <a href="{% url 'show_chapter' choice.to_chapter.id %}">
+                    {{ choice.text }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p><strong>🎉 Ende der Geschichte 🎉</strong></p>
+    <a href="{% url 'story_list' %}">Zurück zur Übersicht</a>
+{% endif %}
+{% endblock %}

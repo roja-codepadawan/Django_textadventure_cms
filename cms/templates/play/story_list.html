@@ -1,0 +1,18 @@
+{% extends "play/base.html" %}
+
+{% block title %}TextAdventure Übersicht{% endblock %}
+
+{% block content %}
+<h1>Wähle eine Story</h1>
+<ul>
+    {% for story in stories %}
+        <li>
+            <h3>{{ story.title }}</h3>
+            <p>{{ story.description }}</p>
+            <a href="{% url 'story_start' story.id %}">Abenteuer starten</a>
+        </li>
+    {% empty %}
+        <li>Keine Stories gefunden.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
